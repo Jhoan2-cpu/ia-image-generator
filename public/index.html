@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Imágenes con IA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎨 Generador de Imágenes con IA</h1>
+            <p class="subtitle">Crea imágenes únicas usando inteligencia artificial</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Contador de generaciones -->
+            <div class="generations-counter">
+                <span class="counter-text">Generaciones disponibles: </span>
+                <span class="counter-value" id="generationsLeft">10/10</span>
+            </div>
+
+            <!-- Prompts sugeridos -->
+            <section class="suggested-prompts">
+                <h3>Prompts sugeridos:</h3>
+                <div class="prompts-grid">
+                    <button class="prompt-btn" data-prompt="Crea una imagen de un estudiante presentando un proyecto">
+                        📊 Estudiante presentando proyecto
+                    </button>
+                    <button class="prompt-btn" data-prompt="Genera una ilustración de comunicación no verbal">
+                        🤝 Comunicación no verbal
+                    </button>
+                    <button class="prompt-btn" data-prompt="Diseña un cartel sobre medios de comunicación">
+                        📰 Medios de comunicación
+                    </button>
+                    <button class="prompt-btn" data-prompt="Crea una escena de debate grupal en clase">
+                        💬 Debate grupal
+                    </button>
+                    <button class="prompt-btn" data-prompt="Ilustra el proceso de comunicación efectiva">
+                        ✉️ Comunicación efectiva
+                    </button>
+                </div>
+            </section>
+
+            <!-- Input de prompt -->
+            <section class="prompt-section">
+                <label for="promptInput">Describe la imagen que deseas generar:</label>
+                <div class="input-container">
+                    <textarea
+                        id="promptInput"
+                        placeholder="Ej: Un estudiante dando una presentación frente a una clase..."
+                        maxlength="500"
+                        rows="4"
+                    ></textarea>
+                    <div class="char-counter">
+                        <span id="charCount">0</span>/500
+                    </div>
+                </div>
+                <button id="generateBtn" class="generate-btn">
+                    <span class="btn-text">Generar Imagen</span>
+                    <span class="btn-loader" style="display: none;">
+                        <span class="spinner"></span> Generando...
+                    </span>
+                </button>
+            </section>
+
+            <!-- Área de resultado -->
+            <section class="result-section" id="resultSection" style="display: none;">
+                <h3>Imagen generada:</h3>
+                <div class="image-container">
+                    <img id="generatedImage" src="" alt="Imagen generada">
+                    <button id="downloadBtn" class="download-btn">
+                        📥 Descargar Imagen
+                    </button>
+                </div>
+            </section>
+
+            <!-- Historial de imágenes -->
+            <section class="history-section" id="historySection" style="display: none;">
+                <h3>Últimas imágenes generadas:</h3>
+                <div class="history-grid" id="historyGrid">
+                    <!-- Las imágenes se agregarán dinámicamente aquí -->
+                </div>
+            </section>
+
+            <!-- Mensaje de error -->
+            <div class="error-message" id="errorMessage" style="display: none;"></div>
+        </main>
+
+        <footer class="footer">
+            <p>Powered by Google Gemini 2.0 Flash</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
